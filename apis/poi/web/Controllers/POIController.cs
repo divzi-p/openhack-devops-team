@@ -11,7 +11,7 @@ namespace poi.Controllers
     [Route("api/poi")]
     public class POIController : ControllerBase
     {
-        //test modification 6
+        //test modification 7
         private readonly POIContext _context;
 
         public POIController(POIContext context)
