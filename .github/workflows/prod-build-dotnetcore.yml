@@ -28,6 +28,6 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Run project for tests
-      run: dotnet run --project ./apis/poi/poi.sln --configuration Release
+      run: dotnet run --project ./apis/poi/web/poi.csproj --configuration Release
     - name: Test
       run: dotnet test ./apis/poi/poi.sln --no-restore --verbosity normal
