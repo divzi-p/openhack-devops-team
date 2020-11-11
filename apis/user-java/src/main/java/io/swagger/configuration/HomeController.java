@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class HomeController {
-    //controller comment 1
+    //controller comment 2
     @RequestMapping(value = "/")
     public String index() {
         System.out.println("swagger-ui.html");
