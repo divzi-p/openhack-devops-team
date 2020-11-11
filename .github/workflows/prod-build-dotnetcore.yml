@@ -17,7 +17,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 2.1.300
+        dotnet-version: 3.1.301
     - name: Install dependencies
       run: dotnet restore ./apis/poi/poi.sln
     - name: Build
@@ -27,7 +27,5 @@ jobs:
       uses: JasonEtco/create-an-issue@v2.4.0
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Run project for tests
-      run: dotnet run --project ./apis/poi/web/poi.csproj --configuration Release
     - name: Test
-      run: dotnet test ./apis/poi/poi.sln --no-restore --verbosity normal
+      run: dotnet test ./apis/poi/tests/UnitTests/UnitTests.csproj --no-restore --verbosity normal
