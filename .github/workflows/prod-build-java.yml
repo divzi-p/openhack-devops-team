@@ -29,3 +29,10 @@ jobs:
       uses: JasonEtco/create-an-issue@v2.4.0
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: JUnit Report
+      # You may pin to the exact commit or the version.
+      # uses: mikepenz/action-junit-report@a1848183796ab25257f486396a45968a3e27d387
+      uses: mikepenz/action-junit-report@v1.1.1
+      with:
+        # GITHUB_TOKEN
+        github_token: ${{ secrets.GITHUB_TOKEN }}
