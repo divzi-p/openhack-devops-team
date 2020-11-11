@@ -1,3 +1,8 @@
+```
+title: Build failed
+assignees: divzi-p
+labels: bug
+```
 <!--
 IF SUFFICIENT INFORMATION IS NOT PROVIDED VIA THE FOLLOWING TEMPLATE THE ISSUE MIGHT BE CLOSED WITHOUT FURTHER CONSIDERATION OR INVESTIGATION
 -->
@@ -10,9 +15,6 @@ IF SUFFICIENT INFORMATION IS NOT PROVIDED VIA THE FOLLOWING TEMPLATE THE ISSUE M
 - [ ] feature request
 - [ ] documentation issue or request
 - [ ] regression (a behavior that used to work and stopped in a new release)
-title: Build failed
-assignees: divzi-p
-labels: bug
 ```
 
 
