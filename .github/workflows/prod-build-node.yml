@@ -26,7 +26,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci
+    - run: npm ci -config apis/userprofile/package.json
     - run: npm run build -config apis/userprofile/package.json --if-present
     - name: Create issue on build failure
       if: ${{ failure() }}
