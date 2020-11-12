@@ -32,7 +32,7 @@ jobs:
         fi
         
     - name: Build
-      run: go build -v .
+      run: go build -v ./apis/trips/.
       
     - name: Create issue on build failure
       if: ${{ failure() }}
@@ -43,4 +43,4 @@ jobs:
 
 
     - name: Test
-      run: go test -v .
+      run: go test -v ./apis/trips/.
