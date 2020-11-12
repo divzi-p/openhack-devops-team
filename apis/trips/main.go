@@ -16,7 +16,7 @@ var (
 )
 
 func getEnv(key, fallback string) string {
-	//go comment 3
+	//go comment 4
 	if value, ok := os.LookupEnv(key); ok {
 		return value
 	}
