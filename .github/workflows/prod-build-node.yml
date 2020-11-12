@@ -26,8 +26,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci -config apis/userprofile/package.json
-    - run: npm run build -config apis/userprofile/package.json --if-present
+    - run: npm ci --prefix apis/userprofile/package.json
+    - run: npm run build --config apis/userprofile/package.json --if-present
     - name: Create issue on build failure
       if: ${{ failure() }}
       uses: JasonEtco/create-an-issue@v2.4.0
