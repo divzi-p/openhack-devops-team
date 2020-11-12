@@ -26,11 +26,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci --prefix apis/userprofile/package.json
-    - run: npm run build --prefix apis/userprofile/package.json --if-present
+    - run: npm ci --prefix apis/userprofile
+    - run: npm run build --prefix apis/userprofile --if-present
     - name: Create issue on build failure
       if: ${{ failure() }}
       uses: JasonEtco/create-an-issue@v2.4.0
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - run: npm test
+    - run: npm test --prefix apis/userprofile
