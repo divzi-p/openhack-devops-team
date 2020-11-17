@@ -3,10 +3,10 @@ name: Go
 on:
   push:
     branches: [ master ]
-    paths: [apis/trips/**]
+    paths: [apis/trips/**,.github/workflows/prod-build-go.yml]
   pull_request:
     branches: [ master ]
-    paths: [apis/trips/**]
+    paths: [apis/trips/**,.github/workflows/prod-build-go.yml]
 
 jobs:
 
@@ -16,7 +16,7 @@ jobs:
     steps:
 
     - name: Set up Go 1.x
-      uses: actions/setup-go@v2
+      uses: actions/setup-go@v2.0.3
       with:
         go-version: ^1.13
 
@@ -35,12 +35,17 @@ jobs:
       run: go build -v ./apis/trips/main.go
       
     - name: Create issue on build failure
-      if: ${{ failure() }}
-      uses: JasonEtco/create-an-issue@v2.4.0
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
+      uses: actions/github-script@0.9.0
+      if: failure()
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          let body = "${{ env.build_name }} Worflow Failure \n Build Number: ${{ github.run_number }} \n Build Log: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }} \n SHA: [${{ github.sha }}](https://github.com/${{ github.repository }}/commit/${{ github.sha }}) \n";
+          github.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: "${{ env.build_name }} Workflow ${{ github.run_number }} Failed! ",
+            body: body
 
     - name: Test
       run: go test -v ./apis/trips/.
