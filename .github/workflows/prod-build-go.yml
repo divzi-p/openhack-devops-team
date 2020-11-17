@@ -16,7 +16,7 @@ jobs:
     steps:
 
     - name: Set up Go 1.x
-      uses: actions/setup-go@v2.0.3
+      uses: actions/setup-go@v2.1.3
       with:
         go-version: ^1.13
 
@@ -46,6 +46,7 @@ jobs:
             repo: context.repo.repo,
             title: "${{ env.build_name }} Workflow ${{ github.run_number }} Failed! ",
             body: body
+            });
 
     - name: Test
       run: go test -v ./apis/trips/.
