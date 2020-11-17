@@ -1,6 +1,7 @@
 name: .NET Core-Build and Test
 env:
   registry: openhkacr.azurecr.io
+  repository: devopsoh/api-poi
 
 on:
   push:
