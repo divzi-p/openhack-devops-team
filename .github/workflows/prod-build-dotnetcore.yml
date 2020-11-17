@@ -3,10 +3,10 @@ name: .NET Core-Build and Test
 on:
   push:
     branches: [ master ]
-    paths: [apis/poi/**]
+    paths: [apis/poi/**,.github/workflows/poi.yml]
   pull_request:
     branches: [ master ]
-    paths: [apis/poi/**]
+    paths: [apis/poi/**,.github/workflows/poi.yml]
 jobs:
   build:
 
