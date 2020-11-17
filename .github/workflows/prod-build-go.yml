@@ -17,8 +17,7 @@ jobs:
 
     - name: Set up Go 1.x
       uses: actions/setup-go@v2.1.3
-      with:
-        go-version: ^1.13
+
 
     - name: Check out code into the Go module directory
       uses: actions/checkout@v2
@@ -32,7 +31,8 @@ jobs:
         fi
         
     - name: Test
-      run: go test -v ./apis/trips/.
+      run: go test ./tests
+
       
     - name: Create issue on build failure
       uses: actions/github-script@v3.0.0
