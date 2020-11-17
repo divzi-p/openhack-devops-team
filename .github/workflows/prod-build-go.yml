@@ -13,6 +13,11 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: apis/trips    
+
     steps:
 
     - name: Set up Go 1.x
