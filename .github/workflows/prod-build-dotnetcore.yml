@@ -2,6 +2,7 @@ name: .NET Core-Build and Test
 env:
   registry: openhkacr.azurecr.io
   repository: devopsoh/api-poi
+  docker_path: apis/poi/web
 
 on:
   push:
