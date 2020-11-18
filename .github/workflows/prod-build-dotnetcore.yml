@@ -80,6 +80,16 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS  }}
+    
+    - name: Azure Container Registry Login
+      uses: Azure/docker-login@v1
+      with:
+        # Container registry username
+        username: ${{ secrets.ACR_USER }}
+        # Container registry password
+        password: ${{ secrets.ACR_KEY }}
+        # Container registry server url
+        login-server: https://openhkacr.azurecr.io/
 
     - name: Azure WebApp
       uses: Azure/webapps-deploy@v2
