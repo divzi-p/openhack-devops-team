@@ -1,9 +1,10 @@
 name: .NET Core-Build and Test
 env:
-  registry: openhkacr.azurecr.io
+  registry: openhack8690uru7acr.azurecr.io
+  registryurl: https://openhack8690uru7acr.azurecr.io/
   repository: devopsoh/api-poi
   docker_path: apis/poi/web
-  webapp_name: openhkweb-dotnet
+  webapp_name: openhack8690uru7poi
   build_name: POI
 
 on:
@@ -50,7 +51,7 @@ jobs:
         # Container registry password
         password: ${{ secrets.ACR_KEY }}
         # Container registry server url
-        login-server: https://openhkacr.azurecr.io/
+        login-server: $registryurl
 
     - name: Docker build
       run: docker build -t $registry/$repository:${{github.run_number}} --build-arg build_version=${{github.run_number}} $docker_path
