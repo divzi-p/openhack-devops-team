@@ -8,7 +8,7 @@ env:
   staging_url: https://openhack8690uru7poi-staging.azurewebsites.net/api/healthcheck/poi
   prod_url: https://openhack8690uru7poi.azurewebsites.net/api/healthcheck/poi
   repository: devopsoh/api-userjava
-  docker_path: .
+  docker_path: apis/user-java
   webapp_name: openhack8690uru7poi
   build_name: POI
   resource_group: openhack8690uru7rg
